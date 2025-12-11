@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>طراحی سایت – MKStudio16</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
+<style>
+body { font-family: 'Vazirmatn', sans-serif; background:#0d1b2a; color:white; }
+.navbar { background:#162436; }
+.navbar .navbar-brand, .navbar-nav .nav-link { color:#00d1ff !important; font-weight:600; }
+.navbar .nav-link:hover { color:#1de2ff !important; }
+.hero { background:url('https://via.placeholder.com/1600x400') center/cover no-repeat; height:400px; display:flex; align-items:center; justify-content:center; position:relative; }
+.hero h1 { font-size:3rem; color:#00d1ff; text-shadow:2px 2px 10px rgba(0,0,0,0.7); }
+.section-title { color:#00d1ff; margin-bottom:40px; font-weight:700; }
+.card { background:#132238; border:none; transition:0.3s; }
+.card:hover { transform: translateY(-10px); box-shadow:0 10px 20px rgba(0,0,0,0.5); }
+.team-card img { border-radius:50%; transition:0.3s; width: 100px;  height: 100px; }
+.team-card img:hover { transform: scale(1.1); }
+form { background:#1b263b; padding:20px; border-radius:12px; margin-top:20px; }
+input, select, textarea { width:100%; padding:10px; margin:10px 0; border:none; border-radius:8px; }
+button { background:#00c6ff; color:black; padding:12px; border:none; width:100%; border-radius:8px; font-size:17px; cursor:pointer; }
+button:hover { background:#1de2ff; }
+footer { background:#162436; color:white; padding:30px; text-align:center; margin-top:40px; }
+footer a { color:#00c6ff; margin:0 10px; transition:0.3s; }
+footer a:hover { color:#1de2ff; }
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">MKStudio16</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">خانه</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#about">درباره ما</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#services">خدمات</a></li>
+        <!-- <li class="nav-item"><a class="nav-link" href="index.html#works">نمونه کارها</a></li> -->
+        <li class="nav-item"><a class="nav-link" href="index.html#team">تیم</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#contact">تماس</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<div class="hero text-center">
+  <h1>طراحی سایت حرفه‌ای</h1>
+</div>
+
+<!-- About Section -->
+<section class="container my-5" id="about-site">
+  <h2 class="section-title text-center">چرا طراحی سایت؟</h2>
+  <p class="text-center fs-5">
+  داشتن یک سایت حرفه‌ای، اولین قدم برای حضور آنلاین و جذب مشتری بیشتر است. سایت شما باید سریع، جذاب و واکنشگرا باشد تا تجربه کاربری بی‌نظیری ایجاد کند.
+  </p>
+</section>
+
+<!-- Portfolio Section -->
+<section class="container my-5" id="works">
+<h2 class="section-title text-center">مشتریان ما</h2>
+<div class="row g-4 justify-content-center">
+  <div class="col-md-4"><div class="card"><a href=""><img src="Mahan_Air-Logo.wine.png" class="card-img-top"></a><div class="card-body text-center"><h5></h5></div></div></div>
+  <div class="col-md-4"><div class="card"><a href=""><img src="Emirates_(airline)-Logo.wine.png" class="card-img-top"></a><div class="card-body text-center"><h5></h5></div></div></div>
+  <div class="col-md-4"><div class="card"><a href=""><img src="Qatar_Airways-Logo.wine.png" class="card-img-top"></a><div class="card-body text-center"><h5></h5></div></div></div>
+</div>
+</section>
+
+<!-- Team Section -->
+<section class="container my-5" id="team">
+<h2 class="section-title text-center">تیم طراحی سایت</h2>
+<div class="row g-4 justify-content-center">
+  <div class="col-md-3 text-center team-card">
+     <a href=""><img src="https://via.placeholder.com/200" class="mb-2"></a>
+   <h5>ایلیا نور</h5>
+    <p>برنامه نویس فول استک - 4 سال سابقه کاری</p>
+  </div>
+  <div class="col-md-3 text-center team-card">
+    <a href="https://mkstudio16.github.io/MK16/"><img src="https://cdn.imgurl.ir/uploads/e611601_IMG_4870_Original_Size.jpg" class="mb-2"></a>
+    <h5>محمد کریمی</h5>
+    <p>مدیر عامل و برنامه نویس فول استک – ۳ سال سابقه</p>
+  </div>
+  <!-- <div class="col-md-3 text-center team-card">
+    <img src="https://via.placeholder.com/200" class="mb-2">
+    <h5>نیما</h5>
+    <p>برنامه‌نویس بک‌اند – ۴ سال سابقه</p>
+  </div>
+</div>
+</section> -->
+
+<!-- Order Form Section -->
+<section class="container my-5" id="order">
+<h2 class="section-title text-center">فرم سفارش طراحی سایت</h2>
+<p class="text-center text-warning">برای پر کردن فرم از فیلترشکن استفاده کنید.</p>
+<form id="siteForm">
+  <input type="text" placeholder="نام و نام خانوادگی" required>
+  <input type="text" placeholder="شماره تماس" required>
+  <label>نوع سایت</label>
+  <select required>
+    <option>فروشگاهی</option>
+    <option>شرکتی</option>
+    <option>شخصی</option>
+    <option>خبری</option>
+    <option>دلخواه</option>
+  </select>
+  <textarea rows="5" placeholder="توضیحات پروژه" required></textarea>
+  <button type="button" onclick="sendTelegramSite()">ارسال</button>
+</form>
+</section>
+
+<footer>
+  <a href="mailto:info@mkstudio16.com" class="text-white fs-4">✉️</a>
+  <a href="tel:+989123456789" class="text-white fs-4">📞</a>
+  <a href="https://instagram.com/mkstudio16" class="text-white fs-4">📸</a>
+  <a href="https://telegram.me/MKStudio16" class="text-white fs-4">💬</a>
+  <p class="mt-3">© حقوق این سایت محفوظ است – MKStudio16</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Telegram Form JS -->
+<script>
+function sendTelegramSite() {
+    const form = document.getElementById('siteForm');
+    const name = form.querySelector('input[type=text]').value;
+    const phone = form.querySelectorAll('input[type=text]')[1].value;
+    const type = form.querySelector('select').value;
+    const desc = form.querySelector('textarea').value;
+
+    const message = `🟢 سفارش طراحی سایت\nنام: ${name}\nشماره: ${phone}\nنوع سایت: ${type}\nتوضیحات: ${desc}`;
+
+const BOT_TOKEN = "8419705870:AAGr1J3N0CQBIne4DISAkoRJ-hAhWbcAgrw";  // توکن ربات
+const CHAT_ID = "7478095251";  // Chat ID که دریافت کردی
+
+
+    fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+        method: 'POST',
+        headers: {'Content-Type':'application/json'},
+        body: JSON.stringify({chat_id: chatId, text: message})
+    })
+    .then(res => alert('پیام با موفقیت ارسال شد!'))
+    .catch(err => alert('خطا در ارسال پیام.'));
+}
+</script>
+
+</body>
+</html>
