@@ -99,19 +99,21 @@ footer a:hover { color:#1de2ff; }
 <section class="container my-5" id="order">
 <h2 class="section-title text-center">فرم سفارش طراحی سایت</h2>
 <p class="text-center text-warning">برای پر کردن فرم از فیلترشکن استفاده کنید.</p>
-<form id="siteForm">
-  <input type="text" placeholder="نام و نام خانوادگی" required>
-  <input type="text" placeholder="شماره تماس" required>
-  <label>نوع سایت</label>
-  <select required>
-    <option>فروشگاهی</option>
-    <option>شرکتی</option>
-    <option>شخصی</option>
-    <option>خبری</option>
+<form id="contentForm">
+  <input type="text" name="name" placeholder="نام و نام خانوادگی" required>
+  <input type="text" name="phone" placeholder="شماره تماس" required>
+
+  <label>نوع محتوا</label>
+  <select name="type" required>
+    <option>شبکه اجتماعی</option>
+    <option>آموزشی</option>
+    <option>تبلیغاتی</option>
     <option>دلخواه</option>
   </select>
-  <textarea rows="5" placeholder="توضیحات پروژه" required></textarea>
-  <button type="button" onclick="sendTelegramSite()">ارسال</button>
+
+  <textarea name="desc" rows="5" placeholder="توضیحات پروژه" required></textarea>
+
+  <button type="button" onclick="sendTelegramContent()">ارسال</button>
 </form>
 </section>
 
@@ -127,28 +129,46 @@ footer a:hover { color:#1de2ff; }
 
 <!-- Telegram Form JS -->
 <script>
-function sendTelegramSite() {
-    const form = document.getElementById('siteForm');
-    const name = form.querySelector('input[type=text]').value;
-    const phone = form.querySelectorAll('input[type=text]')[1].value;
-    const type = form.querySelector('select').value;
-    const desc = form.querySelector('textarea').value;
+function sendTelegramContent() {
+    const form = document.getElementById('contentForm');
 
-    const message = `🟢 سفارش طراحی سایت\nنام: ${name}\nشماره: ${phone}\nنوع سایت: ${type}\nتوضیحات: ${desc}`;
+    const name = form.querySelector('input[name="name"]').value;
+    const phone = form.querySelector('input[name="phone"]').value;
+    const type = form.querySelector('select[name="type"]').value;
+    const desc = form.querySelector('textarea[name="desc"]').value;
 
-const BOT_TOKEN = "8419705870:AAGr1J3N0CQBIne4DISAkoRJ-hAhWbcAgrw";  // توکن ربات
-const CHAT_ID = "7478095251";  // Chat ID که دریافت کردی
+    const message =
+`🟢 سفارش تولید محتوا
+نام: ${name}
+شماره: ${phone}
+نوع محتوا: ${type}
+توضیحات: ${desc}`;
 
+    const BOT_TOKEN = "8419705870:AAGr1J3N0CQBIne4DISAkoRJ-hAhWbcAgrw";
+    const CHAT_ID = "7478095251";
 
-    fetch(`https://api.telegram.org/bot${token}/sendMessage`), {
-        method: 'POST',
-        headers: {'Content-Type':'application/json'},
-        body: JSON.stringify({chat_id: chatId, text: message})
-    }
-    .then(res => alert('پیام با موفقیت ارسال شد!'))
-    .catch(err => alert('خطا در ارسال پیام.'));
+    fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            chat_id: CHAT_ID,
+            text: message
+        })
+    })
+    .then(res => {
+        if (res.ok) {
+            alert("پیام با موفقیت ارسال شد!");
+        } else {
+            alert("خطا در ارسال پیام!");
+        }
+    })
+    .catch(err => {
+        alert("مشکلی در ارتباط با تلگرام پیش آمد.");
+        console.log(err);
+    });
 }
 </script>
 
 </body>
 </html>
+
