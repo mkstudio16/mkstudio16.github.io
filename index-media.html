@@ -144,7 +144,42 @@ const CHAT_ID = "7478095251";  // Chat ID که دریافت کردی
     .then(res => alert('پیام با موفقیت ارسال شد!'))
     .catch(err => alert('خطا در ارسال پیام.'));
 }
+</script><script>
+function sendTelegramContent() {
+    const form = document.getElementById('contentForm');
+    const name = form.querySelector('input[name="name"]').value;
+    const phone = form.querySelector('input[name="phone"]').value;
+    const type = form.querySelector('select[name="type"]').value;
+    const desc = form.querySelector('textarea[name="desc"]').value;
+
+    const message = `🟢 سفارش تولید محتوا
+نام: ${name}
+شماره: ${phone}
+نوع محتوا: ${type}
+توضیحات: ${desc}`;
+
+    const BOT_TOKEN = "8419705870:AAGr1J3N0CQBIne4DISAkoRJ-hAhWbcAgrw";
+    const CHAT_ID = "7478095251";
+
+    fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({ chat_id: CHAT_ID, text: message })
+    })
+    .then(response => {
+        if (response.ok) {
+            alert("پیام با موفقیت ارسال شد");
+        } else {
+            alert("خطا در ارسال پیام");
+        }
+    })
+    .catch(error => {
+        alert("خطا در ارتباط با سرور تلگرام");
+        console.log(error);
+    });
+}
 </script>
 
 </body>
 </html>
+
