@@ -140,11 +140,11 @@ const BOT_TOKEN = "8419705870:AAGr1J3N0CQBIne4DISAkoRJ-hAhWbcAgrw";  // توکن
 const CHAT_ID = "7478095251";  // Chat ID که دریافت کردی
 
 
-    fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+    fetch(`https://api.telegram.org/bot${token}/sendMessage`), {
         method: 'POST',
         headers: {'Content-Type':'application/json'},
         body: JSON.stringify({chat_id: chatId, text: message})
-    })
+    }
     .then(res => alert('پیام با موفقیت ارسال شد!'))
     .catch(err => alert('خطا در ارسال پیام.'));
 }
